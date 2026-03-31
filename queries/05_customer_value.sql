@@ -1,6 +1,6 @@
 WITH paymentperorder AS (
     SELECT order_id, SUM(payment_value) AS total_payment
-    FROM order_payments 
+    FROM order_payments_clean
     GROUP BY order_id
 ),
 
@@ -9,8 +9,8 @@ customer_agg AS (
         c.customer_unique_id,
         COUNT(DISTINCT o.order_id) AS total_orders,
         SUM(p.total_payment) AS total_revenue
-    FROM customers c
-    JOIN orders o 
+    FROM customers_clean c
+    JOIN orders_clean o 
         ON c.customer_id = o.customer_id 
     JOIN paymentperorder p 
         ON o.order_id = p.order_id 

@@ -3,7 +3,7 @@
 WITH noforders AS (
     SELECT customer_unique_id,COUNT(DISTINCT order_id) AS total_orders
     FROM customers AS c
-    JOIN orders AS o
+    JOIN orders_clean AS o
     ON c.customer_id = o.customer_id
     WHERE order_status = 'delivered'
     GROUP BY customer_unique_id

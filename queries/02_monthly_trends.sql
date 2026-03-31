@@ -3,7 +3,7 @@
 
 WITH paymentperorder AS (
     SELECT order_id, SUM(payment_value) AS total_payment
-    FROM order_payments
+    FROM order_payments_clean
     GROUP BY order_id
 )
 
@@ -12,10 +12,10 @@ SELECT
     SUM(p.total_payment) AS total_revenue,
     COUNT(DISTINCT o.order_id) AS total_orders,
     COUNT(DISTINCT c.customer_unique_id) AS total_customers
-FROM orders o
+FROM orders_clean o
 JOIN paymentperorder p 
     ON o.order_id = p.order_id
-JOIN customers c
+JOIN customers_clean c
     ON o.customer_id = c.customer_id
 WHERE o.order_purchase_timestamp IS NOT NULL
 GROUP BY order_month
