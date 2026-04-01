@@ -10,6 +10,10 @@ This project analyzes customer behavior and revenue trends using SQL.
 - queries/ → SQL scripts
 - insights/ → findings
 
+## 📊 Dashboard
+
+[Dashboard](assets/dashboard.png)
+
 ## 🧠 Business Case & Initial Findings
 
 An e-commerce company is experiencing inconsistent growth and wants to better understand customer behavior, retention, and revenue distribution.
@@ -32,6 +36,5 @@ These findings suggest that the business is heavily dependent on continuous cust
 
 This analysis serves as a foundation for further exploration into customer experience, retention strategies, and revenue optimization in subsequent layers of the project.
 
----
 
 
